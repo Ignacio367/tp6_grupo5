@@ -1,0 +1,6 @@
+En el paquete collections se incluyen aquellas clases que declaran una collection para
+guardar los objetos, CollectionLibro, CollectionUsuario, CollectionPrestamo.
+Las características de estas clases son:
+ Atributo collection público y estático, nombre en plural, ejemplo:
+libros.
+ Métodos públicos y estáticos.
