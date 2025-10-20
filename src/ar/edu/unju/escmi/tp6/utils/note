@@ -1,0 +1,6 @@
+En el paquete utils cree una clase java con nombre FechaUtil. En la clase FechaUtil cree
+los métodos estáticos:
+ convertirStringLocalDate(String fechaStr): retorna un objeto de tipo LocalDate.
+El método define un formato para parsear la cadena de texto: “dd/MM/yyyy”, si
+no es posible realizar el parseo lanzar una excepción que se propague al método
+que invocó a éste método
