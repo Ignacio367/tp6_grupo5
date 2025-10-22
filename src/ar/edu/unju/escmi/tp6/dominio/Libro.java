@@ -8,10 +8,6 @@ public class Libro {
     private String isbn;
     private boolean estado; // true si está disponible, false si está prestado
 
-    public Libro() {
-
-    }
-
     public Libro(int id, String titulo, String autor, String isbn, boolean estado) {
         this.id = id;
         this.titulo = titulo;
@@ -52,7 +48,7 @@ public class Libro {
         this.isbn = isbn;
     }
 
-    public boolean isEstado() {
+    public boolean getEstado() {
         return estado;
     }
 

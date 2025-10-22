@@ -3,37 +3,48 @@ package ar.edu.unju.escmi.tp6.collections;
 import java.util.ArrayList;
 import java.util.List;
 
-//import ar.edu.unju.escmi.tp6.dominio.Libro;
+import ar.edu.unju.escmi.tp6.dominio.Libro;
+import ar.edu.unju.escmi.tp6.exceptions.LibroNoDisponibleException;
+import ar.edu.unju.escmi.tp6.exceptions.LibroNoEncontradoException;
 
 public class CollectionLibro {
     public static List<Libro> libros = new ArrayList<>();
 
-    // Precarga de libros
     static {
-        libros.add(new Libro("978-3-16-148410-0", "El Quijote", "Miguel de Cervantes", 1605));
-        libros.add(new Libro("978-0-14-044913-6", "La Odisea", "Homero", -800));
-        libros.add(new Libro("978-0-7432-7356-5", "Cien Años de Soledad", "Gabriel García Márquez", 1967));
-        libros.add(new Libro("978-0-452-28423-4", "1984", "George Orwell", 1949));
+        libros.add(new Libro(1,"La Odisea","Homero","978-0-14-044913-6",true));
+        libros.add(new Libro(2,"Mi vida","Figueroa","922-0-14-044913-6",true));
+        libros.add(new Libro(3,"Como hacer todo mal","Espino","908-0-10-011913-6",true));
     }
 
     public static void registarLibro(Libro libro) {
         libros.add(libro);
     }
 
-   // public static Libro buscarLibroPorId(int Id) {
-   //     for (Libro l : libros) {
-   //         if (l.getId().equals(Id)) {
-   //             return l;
-   //         }
-   //     }
-   //     return null;
-   // }
+    public static Libro buscarLibroPorId(int id) {
+        Libro aux = null;
+        try {
+            for (Libro l : libros) {
+            if (id == l.getId()) {
+                aux = l;
+            }
+        }
+        if(aux == null){
+            throw new LibroNoEncontradoException();
+        }
+        if(aux.getEstado() == false){
+            throw new LibroNoDisponibleException();
+        }
+        } catch (LibroNoEncontradoException | LibroNoDisponibleException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+        return aux;
+    }
 
     public static List<Libro> mostrarLibros() {
         return libros;
     }
 
-   // public static void eliminarLibro(int Id) {
-   //     libros.removeIf(l -> l.getId().equals(Id));
-   // }
+    public static void eliminarLibro(int id) {
+      libros.removeIf(l -> l.getId() == id);
+    }
 }
