@@ -11,7 +11,7 @@ import ar.edu.unju.escmi.tp6.dominio.Bibliotecario;
 public class CollectionUsuario {
     public static List<Usuario> usuarios = new ArrayList<>();
 
-    // Precarga de usuarios
+
     static {
         usuarios.add(new Bibliotecario(1, "Juan", "Perez", "perezjuan@gmail.com","apu"));
         usuarios.add(new Alumno(2, "Maria", "Soto", "sotomaria@gmail.com","2do A",12));

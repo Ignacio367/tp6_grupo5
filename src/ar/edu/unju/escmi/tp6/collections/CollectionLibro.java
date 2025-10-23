@@ -43,8 +43,4 @@ public class CollectionLibro {
     public static List<Libro> mostrarLibros() {
         return libros;
     }
-
-    public static void eliminarLibro(int id) {
-      libros.removeIf(l -> l.getId() == id);
-    }
 }
