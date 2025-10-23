@@ -30,14 +30,12 @@ public class Prestamo {
         this.fechaPrestamo = fechaPrestamo;
         this.libro = libro;
         this.usuario = usuario;
-
-        // Marcar libro como prestado
         this.libro.setEstado(false);
     }
 
     public void registrarDevolucion(LocalDate fechaDevolucion) {
         this.fechaDevolucion = fechaDevolucion;
-        this.libro.setEstado(true); // Al devolver, disponible
+        this.libro.setEstado(true);
     }
 
     public int getId() { return id; }
