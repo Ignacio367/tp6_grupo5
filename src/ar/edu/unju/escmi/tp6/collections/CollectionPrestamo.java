@@ -3,7 +3,6 @@ package ar.edu.unju.escmi.tp6.collections;
 import java.util.ArrayList;
 import java.util.List;
 import ar.edu.unju.escmi.tp6.dominio.Prestamo;
-import java.time.LocalDate;
 
 
 public class CollectionPrestamo {
@@ -27,7 +26,7 @@ public class CollectionPrestamo {
   public static boolean eliminarPrestamo(int Id) {
       for (Prestamo p : prestamos) {
           if (p.getId() == Id) {
-              p.setFechaDevolucion(LocalDate.now());
+              p.registrarDevolucion(null);
               return true;
           }
       }
